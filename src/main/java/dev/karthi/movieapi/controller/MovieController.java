@@ -3,14 +3,13 @@ package dev.karthi.movieapi.controller;
 import java.util.List;
 import java.util.Optional;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.karthi.movieapi.entity.Movies;
+import dev.karthi.movieapi.entity.Movie;
 import dev.karthi.movieapi.service.MovieService;
 
 @RestController
@@ -22,13 +21,13 @@ public class MovieController {
 	
 	
 	@GetMapping
-	public List<Movies> GetAllMovies() {
+	public List<Movie> GetAllMovies() {
 		return movieService.getAllMovies();
 	}
 
-	@GetMapping("/{id}")
-	public Optional<Movies> GetSingleMovie(@PathVariable ObjectId id) {
-		return movieService.getMovieByIMDB(id);
+	@GetMapping("/{imdbId}")
+	public Optional<Movie> GetSingleMovie(@PathVariable String imdbId) {
+		return movieService.SingleMovie(imdbId);
 	}
 	
 }

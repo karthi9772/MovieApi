@@ -8,17 +8,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Document(collection = "movies")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Movies {
+public class Movie {
 	@Id
 	private ObjectId id;
 	
-	private String ImbId;
+	private String imdbId;
 	
 	private String title;
 	
@@ -33,7 +32,7 @@ public class Movies {
 	private List<String> backdrops;
 	
 	@DocumentReference
-	private List<Reviews> reviewIds;
+	private List<Review> reviewIds;
 
 	public ObjectId getId() {
 		return id;
@@ -44,11 +43,11 @@ public class Movies {
 	}
 
 	public String getImbId() {
-		return ImbId;
+		return imdbId;
 	}
 
 	public void setImbId(String imbId) {
-		ImbId = imbId;
+		imdbId = imbId;
 	}
 
 	public String getTitle() {
@@ -99,11 +98,11 @@ public class Movies {
 		this.backdrops = backdrops;
 	}
 
-	public List<Reviews> getReviewIds() {
+	public List<Review> getReviewIds() {
 		return reviewIds;
 	}
 
-	public void setReviewIds(List<Reviews> reviewIds) {
+	public void setReviewIds(List<Review> reviewIds) {
 		this.reviewIds = reviewIds;
 	}
 	
