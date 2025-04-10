@@ -12,7 +12,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Document(collection = "movies")
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Movies {
@@ -35,6 +34,79 @@ public class Movies {
 	
 	@DocumentReference
 	private List<Reviews> reviewIds;
+
+	public ObjectId getId() {
+		return id;
+	}
+
+	public void setId(ObjectId id) {
+		this.id = id;
+	}
+
+	public String getImbId() {
+		return ImbId;
+	}
+
+	public void setImbId(String imbId) {
+		ImbId = imbId;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+	public String getTrailerLink() {
+		return trailerLink;
+	}
+
+	public void setTrailerLink(String trailerLink) {
+		this.trailerLink = trailerLink;
+	}
+
+	public String getPoster() {
+		return poster;
+	}
+
+	public void setPoster(String poster) {
+		this.poster = poster;
+	}
+
+	public List<String> getGenres() {
+		return genres;
+	}
+
+	public void setGenres(List<String> genres) {
+		this.genres = genres;
+	}
+
+	public List<String> getBackdrops() {
+		return backdrops;
+	}
+
+	public void setBackdrops(List<String> backdrops) {
+		this.backdrops = backdrops;
+	}
+
+	public List<Reviews> getReviewIds() {
+		return reviewIds;
+	}
+
+	public void setReviewIds(List<Reviews> reviewIds) {
+		this.reviewIds = reviewIds;
+	}
+	
 	
 	
 }
